@@ -1,0 +1,18 @@
+{
+  "name": "terrads",
+  "version": "1.0.0",
+  "description": "Make ad creatives for your brand's products from your coding agent: browse brands, products, angles, audiences and models, create runs, answer their questions, approve copy and collect the finished images.",
+  "author": { "name": "Terrads", "url": "https://terrads.com" },
+  "homepage": "https://terrads.com/docs/mcp",
+  "repository": "https://github.com/terrads-hq/agent-mode",
+  "license": "MIT",
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Terrads API key",
+      "description": "From Settings → API keys",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}
