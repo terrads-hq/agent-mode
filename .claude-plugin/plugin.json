@@ -1,7 +1,7 @@
 {
   "name": "terrads",
-  "version": "1.0.0",
-  "description": "Make ad creatives for your brand's products from your coding agent: browse brands, products, angles, audiences and models, create runs, answer their questions, approve copy and collect the finished images.",
+  "version": "1.1.0",
+  "description": "Make ad creatives for your brand's products from your coding agent: browse brands, products, angles, audiences and models, create image and video runs, answer their questions, approve their copy, plans and stills, and collect the finished images and videos.",
   "author": { "name": "Terrads", "url": "https://terrads.com" },
   "homepage": "https://terrads.com/docs/mcp",
   "repository": "https://github.com/terrads-hq/agent-mode",
