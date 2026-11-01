@@ -2,14 +2,14 @@
   "name": "terrads",
   "owner": { "name": "Terrads", "url": "https://terrads.com" },
   "metadata": {
-    "description": "Make ad creatives for your brand's products from your coding agent. Included with the Terrads Max plan."
+    "description": "Make ad creatives for your brand's products from your coding agent. Included with every paid Terrads plan."
   },
   "plugins": [
     {
       "name": "terrads",
       "source": "./",
       "description": "Make ad creatives for your brand's products from your coding agent: browse brands, products, angles, audiences and models, create image and video runs, answer their questions, approve their copy, plans and stills, and collect the finished images and videos.",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "category": "productivity"
     }
   ]

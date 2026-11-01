@@ -2,7 +2,7 @@
 
 Make ad creatives for your brand's products from your coding agent, such as Claude Code or Cursor, or any MCP client that can send a header. This repository is a Claude Code plugin and an Agent Skill for the Terrads MCP server at `https://terrads.com/api/mcp`.
 
-Included with the Terrads Max plan. You need a Terrads account on Max and an API key from **Settings → API keys** at terrads.com (shown once, when created).
+Included with every paid Terrads plan. You need a Terrads account on a paid plan and an API key from **Settings → API keys** at terrads.com (shown once, when created).
 
 ## Install
 

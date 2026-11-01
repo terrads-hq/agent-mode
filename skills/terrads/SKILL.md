@@ -3,7 +3,7 @@ name: terrads
 description: "Create ad creatives for a brand's products with Terrads — list brands, products, angles, audiences and models, create an image or video run, answer its questions, approve its copy, plan or stills and collect the finished images and videos — and check, answer, cancel or finish runs made earlier. Use when the user asks to make, check or fetch Terrads ads or runs."
 license: MIT
 metadata:
-  last-updated: "2026-10-13"
+  last-updated: "2026-11-01"
 ---
 
 # Terrads
@@ -22,7 +22,7 @@ Terrads makes finished ad creatives for a brand's products. This skill drives it
 
 ## Setup
 
-- Terrads API access is included with the Max plan. Keys are created in Settings → API keys at terrads.com and shown once.
+- Terrads API access is included with every paid Terrads plan. Keys are created in Settings → API keys at terrads.com and shown once.
 - If no `terrads` MCP server is connected in this session, tell the user how to connect one and stop:
   - In Claude Code, the plugin is the recommended path: `/plugin marketplace add terrads-hq/agent-mode`, then `/plugin install terrads@terrads`. Claude Code asks for the key when the plugin is enabled.
   - For any other MCP client, the client setup is documented at https://terrads.com/docs/mcp.
@@ -47,7 +47,7 @@ Terrads makes finished ad creatives for a brand's products. This skill drives it
 | `get_video_options` | What a video brief can name: voices, music, captions, lengths, sizes, styles, what each AI motion choice makes, and an audio ad's lengths. |
 | `approve_run_plan` | Approves a video run's plans — the charge of a video run — with the AI motion per variation and a credit ceiling. |
 | `update_run_plan` | Changes the words of a video plan's scenes (on screen and voice) before approval. Free. |
-| `retry_run_plan` | Plans again a video variation that could not be planned. Free. |
+| `retry_run_plan` | Plans again a video variation that could not be planned. Free, five times a run; then `plan_retry_limit`: create a new run with a changed brief. |
 | `list_run_stills` | A video run's stills, the pictures its AI clips are made from, with their state and re-roll price. The URLs expire. |
 | `reroll_run_still` | Makes one still again, at its own price. |
 | `approve_run_stills` | Approves a video run's stills; its AI clips are made next. Free. |
