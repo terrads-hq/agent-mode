@@ -3,7 +3,7 @@ name: terrads
 description: "Create ad creatives for a brand's products with Terrads — list brands, products, angles, audiences and models, create an image or video run, answer its questions, approve its copy, plan or stills and collect the finished images and videos — and check, answer, cancel or finish runs made earlier. Use when the user asks to make, check or fetch Terrads ads or runs."
 license: MIT
 metadata:
-  last-updated: "2026-11-01"
+  last-updated: "2026-11-26"
 ---
 
 # Terrads
@@ -18,13 +18,14 @@ Terrads makes finished ad creatives for a brand's products. This skill drives it
 - Without `maxCredits` the run is created at the current price, whatever it is. Only omit it when the user said so.
 - A video run is the exception: creating one is free (`creditCost` 0, and a number in `maxCredits` is refused). It is charged when you approve its plan with `approve_run_plan`, whose `maxCredits` is required — read the price from `get_run` first and agree it with the user. Re-rolling a still with `reroll_run_still` costs that still's own price.
 - Results land in the team's library at terrads.com, next to the runs made in the app.
-- A key acts for its whole team, not just the person who created it. Anything you create, cancel or approve is visible to the team.
+- A connection (a key, or the plugin's sign-in) acts for its whole team, not just the person who made it. Anything you create, cancel or approve is visible to the team.
 
 ## Setup
 
-- Terrads API access is included with every paid Terrads plan. Keys are created in Settings → API keys at terrads.com and shown once.
+- Terrads API access is included with every paid Terrads plan. The Claude Code plugin signs in with the user's Terrads account in the browser; every other client uses a key, created in Settings → API keys at terrads.com and shown once.
 - If no `terrads` MCP server is connected in this session, tell the user how to connect one and stop:
-  - In Claude Code, the plugin is the recommended path: `/plugin marketplace add terrads-hq/agent-mode`, then `/plugin install terrads@terrads`. Claude Code asks for the key when the plugin is enabled.
+  - In Claude Code, the plugin is the recommended path: `/plugin marketplace add terrads-hq/plugin`, then `/plugin install terrads@terrads`. After enabling it, the user runs `/mcp`, picks `terrads` and signs in to Terrads in the browser.
+  - If the plugin is installed but the `terrads` server needs authentication, ask the user to run `/mcp`, pick `terrads` and sign in. You cannot do it for them.
   - For any other MCP client, the client setup is documented at https://terrads.com/docs/mcp.
 - Never look for a Terrads key in environment files, keychains, shell history or dotfiles, and never ask the user to paste one into the conversation. Ask them to connect the server instead.
 
@@ -80,10 +81,10 @@ A tool that cannot do what was asked returns an error result carrying the same e
 - `rate_limited` — too many calls; wait, then retry with backoff.
 - `upgrade_required` — the plan does not include API access.
 - `no_subscription` — the team has no active plan.
-- `past_due` — the last payment failed; keys resume once the card is updated in the app.
+- `past_due` — the last payment failed; the connection resumes once the card is updated in the app.
 - `duplicate_run` — see the section above.
 
-Errors about the request itself — a revoked key, a plan without access, a spent rate-limit budget — come back on the HTTP response before any tool runs. The full list of codes is the reference page at https://terrads.com/docs/errors.
+Errors about the request itself — a revoked key, an expired or removed sign-in, a plan without access, a spent rate-limit budget — come back on the HTTP response before any tool runs. With the plugin, an expired or removed sign-in means the user runs `/mcp`, picks `terrads` and signs in again; there is no key to check. The full list of codes is the reference page at https://terrads.com/docs/errors.
 
 ## Updating
 

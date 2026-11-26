@@ -2,8 +2,7 @@
   "mcpServers": {
     "terrads": {
       "type": "http",
-      "url": "https://terrads.com/api/mcp",
-      "headers": { "Authorization": "Bearer ${user_config.api_key}" }
+      "url": "https://mcp.terrads.com/mcp"
     }
   }
 }
