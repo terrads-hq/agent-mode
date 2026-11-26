@@ -2,7 +2,7 @@
 
 Make ad creatives for your brand's products from your coding agent, such as Claude Code or Cursor, or any MCP client. This repository is a Claude Code plugin and an Agent Skill for the Terrads MCP server: the plugin signs in at `https://mcp.terrads.com/mcp`, and clients that send an API key connect to `https://terrads.com/api/mcp`.
 
-Included with every paid Terrads plan. You need a Terrads account on a paid plan. The plugin signs in with your Terrads account in the browser; other agents use an API key from **Settings → API keys** at terrads.com (shown once, when created).
+Included with every paid Terrads plan. You need a Terrads account on a paid plan. The plugin signs in with your Terrads account in the browser; other agents use an API key from **Settings → Integrations → API keys** at terrads.com (shown once, when created).
 
 ## Install
 
@@ -34,7 +34,7 @@ Then connect the MCP server in your client with an API key, following https://te
 
 - Creating a run spends your team's credits. The skill estimates the price from the model list, agrees a ceiling with you and passes it as `maxCredits`; above the ceiling nothing is charged and the agent asks again with the exact price.
 - Results land in your team's library at terrads.com, next to the runs made in the app.
-- A connection acts for the whole team you picked. Anything the agent creates, cancels or approves is visible to your team, and disconnecting it in **Settings → API** (or revoking the key) stops it at once.
+- A connection acts for the whole team you picked. Anything the agent creates, cancels or approves is visible to your team, and disconnecting it in **Settings → Integrations** (or revoking the key) stops it at once.
 
 ## How it signs in
 

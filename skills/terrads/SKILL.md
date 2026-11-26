@@ -22,7 +22,7 @@ Terrads makes finished ad creatives for a brand's products. This skill drives it
 
 ## Setup
 
-- Terrads API access is included with every paid Terrads plan. The Claude Code plugin signs in with the user's Terrads account in the browser; every other client uses a key, created in Settings → API keys at terrads.com and shown once.
+- Terrads API access is included with every paid Terrads plan. The Claude Code plugin signs in with the user's Terrads account in the browser; every other client uses a key, created in Settings → Integrations → API keys at terrads.com and shown once.
 - If no `terrads` MCP server is connected in this session, tell the user how to connect one and stop:
   - In Claude Code, the plugin is the recommended path: `/plugin marketplace add terrads-hq/plugin`, then `/plugin install terrads@terrads`. After enabling it, the user runs `/mcp`, picks `terrads` and signs in to Terrads in the browser.
   - If the plugin is installed but the `terrads` server needs authentication, ask the user to run `/mcp`, pick `terrads` and sign in. You cannot do it for them.
